@@ -1,0 +1,34 @@
+JFDML JFormDesigner: "7.0.5.1.409" Java: "11.0.14.1" encoding: "UTF-8"
+
+new FormModel {
+	"i18n.autoExternalize": true
+	"i18n.bundleName": "strings"
+	"i18n.keyPrefix": "ConversionJobRenderer"
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridBagLayout ) {
+			"$columnSpecs": "0:1.0, 0"
+			"$rowSpecs": "0:1.0"
+			"$hGap": 10
+			"$vGap": 10
+			"$alignTop": true
+			"$alignLeft": true
+		} ) {
+			name: "this"
+			"border": new javax.swing.border.EmptyBorder( 10, 10, 10, 10 )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "nameLabel"
+				"text": new FormMessage( null, "ConversionJobRenderer.nameLabel.text" )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "statusLabel"
+				"text": new FormMessage( null, "ConversionJobRenderer.statusLabel.text" )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridx": 1
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 400, 95 )
+		} )
+	}
+}

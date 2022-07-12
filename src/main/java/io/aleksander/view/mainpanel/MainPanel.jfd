@@ -1,0 +1,113 @@
+JFDML JFormDesigner: "7.0.5.1.409" Java: "11.0.14.1" encoding: "UTF-8"
+
+new FormModel {
+	"i18n.autoExternalize": true
+	"i18n.bundleName": "strings"
+	"i18n.keyPrefix": "MainPanel"
+	contentType: "form/swing"
+	root: new FormRoot {
+		auxiliary() {
+			"JavaCodeGenerator.defaultVariableGetter": true
+		}
+		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridBagLayout ) {
+			"$columnSpecs": "0"
+			"$rowSpecs": "0, 0, 0, 0, 0"
+			"$alignLeft": true
+			"$alignTop": true
+			"$vGap": 5
+			"$hGap": 5
+		} ) {
+			name: "this"
+			"minimumSize": new java.awt.Dimension( 640, 480 )
+			"preferredSize": new java.awt.Dimension( 640, 480 )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "queueLabel"
+				"text": new FormMessage( null, "MainPanel.queueLabel.text" )
+				"font": new com.jformdesigner.model.SwingDerivedFont( null, 1, 0, false )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"insets": new java.awt.Insets( 5, 5, 0, 5 )
+			} )
+			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+				name: "fileListScrollPane"
+				add( new FormComponent( "javax.swing.JList" ) {
+					name: "fileList"
+					auxiliary() {
+						"JavaCodeGenerator.typeParameters": "Conversion"
+					}
+				} )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"weighty": 1.0
+				"weightx": 1.0
+				"gridy": 1
+				"insets": new java.awt.Insets( 5, 5, 5, 5 )
+			} )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.FlowLayout ) {
+				"alignment": 2
+				"vgap": 0
+			} ) {
+				name: "panel1"
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "removeBtn"
+					"text": new FormMessage( null, "MainPanel.removeBtn.text" )
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "clearBtn"
+					"text": new FormMessage( null, "MainPanel.clearBtn.text" )
+				} )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridy": 2
+			} )
+			add( new FormComponent( "javax.swing.JSeparator" ) {
+				name: "separator1"
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridy": 3
+				"insets": new java.awt.Insets( 5, 5, 5, 5 )
+			} )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridBagLayout ) {
+				"$columnSpecs": "0, 0, 0"
+				"$rowSpecs": "0, 0"
+				"$hGap": 5
+				"$vGap": 5
+				"$alignLeft": true
+				"$alignTop": true
+			} ) {
+				name: "controlsPane"
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "saveToLabel"
+					"text": new FormMessage( null, "MainPanel.saveToLabel.text" )
+					"font": new com.jformdesigner.model.SwingDerivedFont( null, 1, 0, false )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "outputDirectoryTextField"
+					"horizontalAlignment": 4
+					"editable": false
+					"preferredSize": sfield com.jformdesigner.model.FormObject NULL_VALUE
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+					"weightx": 1.0
+					"gridx": 1
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "outputFolderBtn"
+					"text": new FormMessage( null, "MainPanel.outputFolderBtn.text" )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+					"gridx": 2
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "convertBtn"
+					"text": new FormMessage( null, "MainPanel.convertBtn.text" )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+					"gridy": 1
+					"gridx": 2
+				} )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridy": 4
+				"hAlign": 5
+				"weightx": 1.0
+				"insets": new java.awt.Insets( 5, 5, 5, 5 )
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 400, 300 )
+		} )
+	}
+}
