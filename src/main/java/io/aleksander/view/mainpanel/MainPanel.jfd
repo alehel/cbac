@@ -20,6 +20,7 @@ new FormModel {
 			name: "this"
 			"minimumSize": new java.awt.Dimension( 640, 480 )
 			"preferredSize": new java.awt.Dimension( 640, 480 )
+			"border": new javax.swing.border.EmptyBorder( 5, 5, 5, 5 )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "queueLabel"
 				"text": new FormMessage( null, "MainPanel.queueLabel.text" )

@@ -4,6 +4,7 @@
 
 package io.aleksander.view.mainpanel;
 
+import javax.swing.border.*;
 import io.aleksander.model.Conversion;
 
 import java.awt.*;
@@ -86,6 +87,7 @@ public class MainPanel extends JPanel {
     //======== this ========
     setMinimumSize(new Dimension(640, 480));
     setPreferredSize(new Dimension(640, 480));
+    setBorder(new EmptyBorder(5, 5, 5, 5));
     setLayout(new GridBagLayout());
     ((GridBagLayout)getLayout()).columnWidths = new int[] {0, 0};
     ((GridBagLayout)getLayout()).rowHeights = new int[] {0, 0, 0, 0, 0, 0};
