@@ -24,12 +24,16 @@ public class ConvertAction implements ActionListener {
   public void actionPerformed(ActionEvent e) {
     queue.setConversionInProgress(true);
 
+    // Use a copy of the queue elements in case user adds new ones mid-conversion, which would lead to concurrent
+    // modification. New elements won't be converted untill user starts a new round.
+    List<Conversion> conversions = List.copyOf(queue.getConversions());
+
     SwingWorker<Boolean, Integer> converterThread =
         new SwingWorker<>() {
           @Override
           protected Boolean doInBackground() throws Exception {
-            List<Conversion> conversions = queue.getConversions();
             for (Conversion conversionJob : conversions) {
+              // the queue might contain previously completed conversions.
               if (conversionJob.getStatus() != ConversionStatus.PENDING) {
                 continue;
               }
@@ -46,7 +50,6 @@ public class ConvertAction implements ActionListener {
 
           @Override
           protected void done() {
-            super.done();
             queue.setConversionInProgress(false);
           }
 
