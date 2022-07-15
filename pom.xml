@@ -182,7 +182,7 @@
         <configuration>
           <archive>
             <manifest>
-              <mainClass>io.aleksander.App</mainClass>
+              <mainClass>io.aleksander.cbac.App</mainClass>
             </manifest>
           </archive>
           <descriptorRefs>
