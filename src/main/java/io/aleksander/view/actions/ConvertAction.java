@@ -22,6 +22,8 @@ public class ConvertAction implements ActionListener {
 
   @Override
   public void actionPerformed(ActionEvent e) {
+    queue.setConversionInProgress(true);
+
     SwingWorker<Boolean, Integer> converterThread =
         new SwingWorker<>() {
           @Override
@@ -45,6 +47,7 @@ public class ConvertAction implements ActionListener {
           @Override
           protected void done() {
             super.done();
+            queue.setConversionInProgress(false);
           }
 
           @Override

@@ -37,6 +37,8 @@ public class MainPanelController {
         view.getOutputDirectoryTextField().setText(model.getOutputDirectory().getAbsolutePath());
         setButtonStates();
     });
+
+    model.addPropertyChangeListener(ConversionQueue.CONVERSION_IN_PROGRESS, e-> setButtonStates());
   }
 
   private void configureFileList() {
@@ -70,8 +72,10 @@ public class MainPanelController {
   private void setButtonStates() {
     boolean filesInQueue = view.getFileList().getModel().getSize() > 0;
     boolean outputDirectorySet = model.getOutputDirectory() != null;
+    boolean conversionInProgress = model.getConversionInProgress();
 
-    view.getConvertBtn().setEnabled(filesInQueue && outputDirectorySet);
+    view.getConvertBtn().setEnabled(filesInQueue && outputDirectorySet && !conversionInProgress);
+    view.getOutputFolderBtn().setEnabled(!conversionInProgress);
     view.getClearBtn().setEnabled(filesInQueue);
     view.getRemoveBtn().setEnabled(filesInQueue);
   }
