@@ -77,14 +77,14 @@
       <artifactId>log4j-slf4j-impl</artifactId>
     </dependency>
 
-    <!-- https://mvnrepository.com/artifact/commons-logging/commons-logging -->
+    <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
     <dependency>
-      <groupId>commons-logging</groupId>
-      <artifactId>commons-logging</artifactId>
-      <version>1.2</version>
-      <scope>provided</scope>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>1.7.36</version>
     </dependency>
 
+    <!-- Passes commons-logging logs to SLF4J so that we can control logging from dependencies such as pdfbox. -->
     <!-- https://mvnrepository.com/artifact/org.slf4j/jcl-over-slf4j -->
     <dependency>
       <groupId>org.slf4j</groupId>
@@ -92,11 +92,12 @@
       <version>1.7.36</version>
     </dependency>
 
-    <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
+    <!-- https://mvnrepository.com/artifact/commons-logging/commons-logging -->
     <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-api</artifactId>
-      <version>1.7.36</version>
+      <groupId>commons-logging</groupId>
+      <artifactId>commons-logging</artifactId>
+      <version>1.2</version>
+      <scope>provided</scope>
     </dependency>
 
     <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter -->
