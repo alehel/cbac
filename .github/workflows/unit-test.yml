@@ -1,0 +1,32 @@
+name: "Unit Test"
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: true
+      matrix:
+        java: [ 17 ]
+        java-dist: [ 'temurin' ] # Eclipse Temurin
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Set up JDK ${{ matrix.java }}
+        uses: actions/setup-java@v3
+        with:
+          distribution: ${{ matrix.java-dist }}
+          java-version: ${{ matrix.java }}
+
+      - name: Run tests
+        run: mvn test
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v3
+        with:
+          fail_ci_if_error: true
+          verbose: true
