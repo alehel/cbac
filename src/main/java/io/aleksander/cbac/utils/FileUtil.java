@@ -22,7 +22,7 @@ public class FileUtil {
    * @param numberOfPages the total number of pages in the comic book.
    * @return a file name padded with sufficient 0s so that the file system will sort them correctly.
    */
-  public String createPaddedFileNameForPage(int page, int numberOfPages) {
+  public String createPaddedFileNameForPage(final int page, final int numberOfPages) {
     StringBuilder string = new StringBuilder(String.valueOf(page));
     int places = String.valueOf(numberOfPages).length();
 
@@ -62,10 +62,10 @@ public class FileUtil {
    * @throws IOException if saving the file failed.
    */
   public void writeBufferedImageToDisk(
-      BufferedImage bufferedImage,
-      File destinationFolder,
-      String fileName,
-      OutputImageFormat outputImageFormat)
+      final BufferedImage bufferedImage,
+      final File destinationFolder,
+      final String fileName,
+      final OutputImageFormat outputImageFormat)
       throws IOException {
     File outputImage =
         new File(
