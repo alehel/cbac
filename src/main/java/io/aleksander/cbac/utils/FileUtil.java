@@ -1,6 +1,5 @@
 package io.aleksander.cbac.utils;
 
-import io.aleksander.cbac.model.OutputFileFormat;
 import io.aleksander.cbac.model.OutputImageFormat;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -9,6 +8,7 @@ import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.Objects;
 
 public class FileUtil {
   private static final Logger logger = LoggerFactory.getLogger(FileUtil.class);
@@ -22,7 +22,7 @@ public class FileUtil {
    * @param numberOfPages the total number of pages in the comic book.
    * @return a file name padded with sufficient 0s so that the file system will sort them correctly.
    */
-  public String createPaddedFileNameForPage(int page, int numberOfPages) {
+  public String createPaddedFileNameForPage(final int page, final int numberOfPages) {
     StringBuilder string = new StringBuilder(String.valueOf(page));
     int places = String.valueOf(numberOfPages).length();
 
@@ -34,18 +34,22 @@ public class FileUtil {
   }
 
   /**
-   * Takes the name of an input file and returns a copy where the extension has been changed for the
-   * one specified.
+   * Returns the file name of a File without its extension.
    *
-   * @param inputFile
-   * @param outputFileFormat
-   * @return a file name using the specified extension.
+   * @param inputFile the inputFile to query.
+   * @return the file name without the extension.
    */
-  public String createOutputFileNameWithExtension(
-      File inputFile, OutputFileFormat outputFileFormat) {
-    String fileNameWithoutExtension =
-        inputFile.getName().substring(0, inputFile.getName().lastIndexOf('.'));
-    return fileNameWithoutExtension + "." + outputFileFormat.getExtension();
+  public String fileNameWithoutExtension(final File inputFile) {
+    Objects.requireNonNull(inputFile, "Can't determine file name for null");
+
+    int notFound = -1;
+    int indexOfExtension = inputFile.getName().lastIndexOf('.');
+
+    if (indexOfExtension == notFound) {
+      return inputFile.getName();
+    }
+
+    return inputFile.getName().substring(0, indexOfExtension);
   }
 
   /**
@@ -58,10 +62,10 @@ public class FileUtil {
    * @throws IOException if saving the file failed.
    */
   public void writeBufferedImageToDisk(
-      BufferedImage bufferedImage,
-      File destinationFolder,
-      String fileName,
-      OutputImageFormat outputImageFormat)
+      final BufferedImage bufferedImage,
+      final File destinationFolder,
+      final String fileName,
+      final OutputImageFormat outputImageFormat)
       throws IOException {
     File outputImage =
         new File(
