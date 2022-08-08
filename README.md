@@ -1,5 +1,6 @@
 # Comic Book Archive Converter
 [![codecov](https://codecov.io/gh/alehel/cbac/branch/main/graph/badge.svg?token=XDZH5GLCDS)](https://codecov.io/gh/alehel/cbac)
+[![FOSSA Status](https://app.fossa.com/api/projects/custom%2B32811%2Fgithub.com%2Falehel%2Fcbac.svg?type=shield)](https://app.fossa.com/projects/custom%2B32811%2Fgithub.com%2Falehel%2Fcbac?ref=badge_shield)
 
 Comic Book Archive Converter (or CBAC for short) is a simple desktop application for converting files to a comic book archive (cbz). Currently supports converting PDF files to cbz files using jpeg as the image format.
 
