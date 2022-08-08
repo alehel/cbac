@@ -41,10 +41,7 @@ public class Converter {
     ArchiveCreator archiveCreator =
         ArchiveCreatorSimpleFactory.forOutputFileFormat(settings.getOutputFileFormat());
 
-    String comicArchiveFileName =
-        (new FileUtil())
-            .createOutputFileNameWithExtension(
-                conversion.getFile(), settings.getOutputFileFormat());
+    String comicArchiveFileName = (new FileUtil()).fileNameWithoutExtension(conversion.getFile());
     comicArchiveFileName =
         outputDirectory.getAbsolutePath() + File.separator + comicArchiveFileName;
 

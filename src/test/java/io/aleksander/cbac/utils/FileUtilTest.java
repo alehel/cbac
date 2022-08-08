@@ -1,7 +1,5 @@
 package io.aleksander.cbac.utils;
 
-import io.aleksander.cbac.model.OutputFileFormat;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
@@ -25,16 +23,17 @@ class FileUtilTest {
   @CsvSource({"0,10,00", "9, 10, 09", "98, 100, 098"})
   void createPaddedFileName_pageNeedsPadding_returnsPageNumberWithPadding(
       int pageNumber, int totalPages, String expectedFileName) {
-      String paddedFileName = fileUtil.createPaddedFileNameForPage(pageNumber, totalPages);
-      assertEquals(expectedFileName, paddedFileName);
+    String paddedFileName = fileUtil.createPaddedFileNameForPage(pageNumber, totalPages);
+    assertEquals(expectedFileName, paddedFileName);
   }
 
-  @Test
-  void createOutputFileNameWithExtension_inputFileIsPdfAndOutputFormatIsCbz_returnsCbzFileName() {
-    File inputFile = new File("a_input.pdf");
-    String expected = "a_input.cbz";
+  @ParameterizedTest
+  @CsvSource({"a.pdf, a", "b, b"})
+  void fileNameWithoutExtension_returnsFileNameWithoutExtensionIfPresent(
+      String input, String expected) {
+    File inputFile = new File(input);
 
-    String result = fileUtil.createOutputFileNameWithExtension(inputFile, OutputFileFormat.CBZ);
+    String result = fileUtil.fileNameWithoutExtension(inputFile);
     assertEquals(expected, result);
   }
 }
