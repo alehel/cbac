@@ -1,4 +1,4 @@
-name: "Code Coverage"
+name: Build, test and package
 
 on: [push, pull_request]
 
@@ -22,8 +22,8 @@ jobs:
           distribution: ${{ matrix.java-dist }}
           java-version: ${{ matrix.java }}
 
-      - name: Run tests
-        run: mvn test
+      - name: Build with Maven
+        run: mvn --batch-mode --update-snapshots package
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v3
