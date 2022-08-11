@@ -1,9 +1,9 @@
-package io.aleksander.cbac.converter.arhive;
+package io.aleksander.cbac.converter.archive;
 
 import io.aleksander.cbac.model.OutputFileFormat;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class ArchiveCreatorSimpleFactoryTest {
 

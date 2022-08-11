@@ -67,6 +67,18 @@ public class MainPanel extends JPanel {
     return convertBtn;
   }
 
+  public JLabel getLabel1() {
+    return label1;
+  }
+
+  public JProgressBar getProgressBar() {
+    return progressBar;
+  }
+
+  public JPanel getVSpacer1() {
+    return vSpacer1;
+  }
+
   private void initComponents() {
     // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
     // Generated using JFormDesigner non-commercial license
@@ -83,6 +95,9 @@ public class MainPanel extends JPanel {
     outputDirectoryTextField = new JTextField();
     outputFolderBtn = new JButton();
     convertBtn = new JButton();
+    vSpacer1 = new JPanel(null);
+    label1 = new JLabel();
+    progressBar = new JProgressBar();
 
     //======== this ========
     setMinimumSize(new Dimension(640, 480));
@@ -131,10 +146,10 @@ public class MainPanel extends JPanel {
     //======== controlsPane ========
     {
       controlsPane.setLayout(new GridBagLayout());
-      ((GridBagLayout)controlsPane.getLayout()).columnWidths = new int[] {0, 0, 0, 0};
-      ((GridBagLayout)controlsPane.getLayout()).rowHeights = new int[] {0, 0, 0};
-      ((GridBagLayout)controlsPane.getLayout()).columnWeights = new double[] {0.0, 0.0, 0.0, 1.0E-4};
-      ((GridBagLayout)controlsPane.getLayout()).rowWeights = new double[] {0.0, 0.0, 1.0E-4};
+      ((GridBagLayout)controlsPane.getLayout()).columnWidths = new int[] {0, 0, 0, 0, 0};
+      ((GridBagLayout)controlsPane.getLayout()).rowHeights = new int[] {0, 0, 0, 0};
+      ((GridBagLayout)controlsPane.getLayout()).columnWeights = new double[] {0.0, 0.0, 0.0, 0.0, 1.0E-4};
+      ((GridBagLayout)controlsPane.getLayout()).rowWeights = new double[] {0.0, 0.0, 0.0, 1.0E-4};
 
       //---- saveToLabel ----
       saveToLabel.setText(bundle.getString("MainPanel.saveToLabel.text"));
@@ -155,11 +170,23 @@ public class MainPanel extends JPanel {
       outputFolderBtn.setText(bundle.getString("MainPanel.outputFolderBtn.text"));
       controlsPane.add(outputFolderBtn, new GridBagConstraints(2, 0, 1, 1, 0.0, 0.0,
         GridBagConstraints.CENTER, GridBagConstraints.BOTH,
-        new Insets(0, 0, 5, 0), 0, 0));
+        new Insets(0, 0, 5, 5), 0, 0));
 
       //---- convertBtn ----
       convertBtn.setText(bundle.getString("MainPanel.convertBtn.text"));
-      controlsPane.add(convertBtn, new GridBagConstraints(2, 1, 1, 1, 0.0, 0.0,
+      controlsPane.add(convertBtn, new GridBagConstraints(3, 0, 1, 1, 0.0, 0.0,
+        GridBagConstraints.CENTER, GridBagConstraints.BOTH,
+        new Insets(0, 0, 5, 0), 0, 0));
+      controlsPane.add(vSpacer1, new GridBagConstraints(0, 1, 1, 1, 0.0, 0.0,
+        GridBagConstraints.CENTER, GridBagConstraints.BOTH,
+        new Insets(0, 0, 5, 5), 0, 0));
+
+      //---- label1 ----
+      label1.setText(bundle.getString("MainPanel.label1.text"));
+      controlsPane.add(label1, new GridBagConstraints(0, 2, 1, 1, 0.0, 0.0,
+        GridBagConstraints.CENTER, GridBagConstraints.HORIZONTAL,
+        new Insets(0, 0, 0, 5), 0, 0));
+      controlsPane.add(progressBar, new GridBagConstraints(1, 2, 3, 1, 0.0, 0.0,
         GridBagConstraints.CENTER, GridBagConstraints.BOTH,
         new Insets(0, 0, 0, 0), 0, 0));
     }
@@ -183,5 +210,8 @@ public class MainPanel extends JPanel {
   private JTextField outputDirectoryTextField;
   private JButton outputFolderBtn;
   private JButton convertBtn;
+  private JPanel vSpacer1;
+  private JLabel label1;
+  private JProgressBar progressBar;
   // JFormDesigner - End of variables declaration  //GEN-END:variables
 }

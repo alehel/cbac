@@ -1,4 +1,4 @@
-package io.aleksander.cbac.converter.arhive;
+package io.aleksander.cbac.converter.archive;
 
 import io.aleksander.cbac.model.OutputFileFormat;
 
