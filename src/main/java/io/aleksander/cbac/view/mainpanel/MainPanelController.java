@@ -35,7 +35,12 @@ public class MainPanelController {
   private void configureComponents() {
     fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
     setButtonStates();
-    view.getConvertBtn().addActionListener(new ConvertAction(model, view.getFileList()));
+    view.getProgressBar().setMinimum(0);
+    view.getProgressBar().setMaximum(100);
+    view.getConvertBtn()
+        .addActionListener(
+            new ConvertAction(
+                model, view.getFileList(), progress -> view.getProgressBar().setValue(progress)));
     configureOutputFolderButton();
     configureFileList();
 

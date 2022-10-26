@@ -1,7 +1,7 @@
 package io.aleksander.cbac.converter;
 
-import io.aleksander.cbac.converter.arhive.ArchiveCreator;
-import io.aleksander.cbac.converter.arhive.ArchiveCreatorSimpleFactory;
+import io.aleksander.cbac.converter.archive.ArchiveCreator;
+import io.aleksander.cbac.converter.archive.ArchiveCreatorSimpleFactory;
 import io.aleksander.cbac.converter.bufferedimage.FileToImageConverter;
 import io.aleksander.cbac.converter.bufferedimage.FileToImageConverterSimpleFactory;
 import io.aleksander.cbac.model.Conversion;
